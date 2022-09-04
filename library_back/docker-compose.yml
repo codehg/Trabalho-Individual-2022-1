@@ -1,0 +1,13 @@
+services:
+    db:
+        image: postgres
+        container_name: db
+        environment:
+            POSTGRES_PASSWORD: QWE@1234
+            POSTGRES_USER: code
+            POSTGRES_DB: library_db
+            DATABASE_URL: postgres://code:QWE@1234@localHost:5432/library_db
+        volumes:
+            - ./dbdata:/var/lib/postgresql/data
+        ports:
+            - "8000:5432"
